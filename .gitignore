@@ -1,0 +1,14 @@
+Thumbs.db
+*.iml
+*.ipr
+*.iws
+target
+.project
+.idea
+/*.sh
+.settings
+.classpath
+.DS_Store
+/vpbx-webapp/gwt-unitCache/
+/vpbx-webapp/war/
+/vpbx-webapp/jetty.home_IS_UNDEFINED/

@@ -1,0 +1,157 @@
+@startuml
+
+
+
+interface Iterable {
+	Iterator iterator()
+}
+
+interface Iterator {
+	hasNext()
+	next()
+	remove()
+}
+
+interface ListIterator {
+
+}
+
+interface Collection{
+	add()
+	addAll()
+	remove()
+	removeAll()
+	retainAll()
+	clear()
+	contains()
+    toArray()
+	size()
+	isEmpty()
+	equals()
+	hashcode()
+}
+
+interface List #coral {
+	add (int index)
+	addAll (int index)
+	get (int index)
+	set (int index)
+	indexOf()
+	lastIndexOf()
+	subList(int fromIndex, int toIndex)
+}
+interface Set #coral
+interface SortedSet
+interface NavigableSet
+
+interface Queue #coral
+interface Deque
+interface BlockingQueue #Plum
+interface TransferQueue #Plum
+interface BlockingDeque #Plum
+
+interface Map #coral
+interface SortedMap
+interface NavigableMap
+interface ConcurrentMap #Plum
+interface ConcurrentNavigableMap #Plum
+
+class PriorityQueue
+class ArrayBlockingQueue #Plum
+class DelayQueue #Plum
+class LinkedBlockingDeque #Plum
+class LinkedTransferQueue #Plum
+class ConcurrentLinkedQueue #Plum
+class SynchronousQueue #Plum
+class PriorityBlockingQueue #Plum
+class LinkedBlockingQueue #Plum
+
+class ArrayList
+class LinkedList
+class CopyOnWriteArrayList #Plum
+class Vector #LightGrey
+class Stack  #LightGrey
+
+
+class HashSet
+class LinkedHashSet
+class TreeSet
+class EnumSet
+class CopyOnWriteArraySet #Plum
+class ConcurrentSkipListSet #Plum
+
+class HashMap
+class LinkedHashMap
+class TreeMap
+class EnumMap
+class IdentityHashMap
+class WeakHashMap
+class ConcurrentHashMap #Plum
+class ConcurrentSkipListMap #Plum
+
+class Dictionary #LightGrey
+class Hashtable #LightGrey
+
+
+Iterable --> Iterator
+ListIterator --|> Iterator
+Collection --|> Iterable
+
+
+Queue --|> Collection
+Deque --|> Queue
+ArrayDeque --|> Deque
+BlockingQueue -left-|> Queue
+BlockingDeque --|> Deque
+PriorityQueue --|> Queue
+ConcurrentLinkedQueue --|> Queue
+
+TransferQueue --|> BlockingQueue
+ArrayBlockingQueue --|> BlockingQueue
+SynchronousQueue --|> BlockingQueue
+PriorityBlockingQueue -up-|> BlockingQueue
+LinkedBlockingQueue -up-|> BlockingQueue
+DelayQueue -up-|> BlockingQueue
+LinkedBlockingDeque --|> BlockingDeque
+LinkedTransferQueue --|> TransferQueue
+
+
+
+Set  --|> Collection
+SortedSet --|> Set
+NavigableSet --|> SortedSet
+HashSet --|> Set
+EnumSet -up-|> Set
+TreeSet --|> NavigableSet
+LinkedHashSet --|> HashSet
+CopyOnWriteArraySet -up-|> Set
+ConcurrentSkipListSet --|> NavigableSet
+
+List --|> Collection
+List --> ListIterator
+ArrayList --|> List
+LinkedList --|> List
+CopyOnWriteArrayList -right-|> List
+LinkedList --|> Deque
+Vector --|> List
+Stack  --|> Vector
+
+
+SortedMap --|> Map
+NavigableMap --|> SortedMap
+Hashtable --|> Dictionary
+HashMap -right-|> Map
+EnumMap -left-|> Map
+TreeMap --|> NavigableMap
+LinkedHashMap --|> HashMap
+IdentityHashMap -up-|> Map
+WeakHashMap -up-|> Map
+ConcurrentMap  --|> Map
+ConcurrentNavigableMap --|> NavigableMap
+ConcurrentNavigableMap --|> ConcurrentMap
+ConcurrentHashMap --|> ConcurrentMap
+ConcurrentSkipListMap --|> ConcurrentNavigableMap
+
+
+
+@enduml
