@@ -1,0 +1,49 @@
+@startuml
+
+
+interface Iterable
+interface Collection<E>
+interface List<E>
+interface Queue<E>
+interface Deque<E>
+
+interface Set<E>
+interface SortedSet<E>
+interface NavigableSet<E>
+
+interface Iterator<E>
+interface Spliterator<T>
+note left:Java 8
+interface ListIterator<E>
+interface PrimitiveIteratorr<T,T_CONS>
+
+
+interface Map<K,V>
+interface SortedMap<K,V>
+interface NavigableMap<K,V>
+
+interface Map.Entry
+
+
+Collection --|> Iterable
+List --|> Collection
+Queue --|> Collection
+Deque --|> Queue
+Set --|> Collection
+
+SortedSet --|> Set
+NavigableSet --|> SortedSet
+
+ListIterator --|> Iterator
+PrimitiveIteratorr --|> Iterator
+
+SortedMap --|>  Map
+NavigableMap --|> SortedMap
+
+Map -right-> Map.Entry
+Iterable -left-> Iterator
+Iterable --> Spliterator
+
+
+
+@enduml

@@ -17,28 +17,11 @@ interface ListIterator {
 }
 
 interface Collection{
-	add()
-	addAll()
-	remove()
-	removeAll()
-	retainAll()
-	clear()
-	contains()
-    toArray()
-	size()
-	isEmpty()
-	equals()
-	hashcode()
+
 }
 
 interface List #coral {
-	add (int index)
-	addAll (int index)
-	get (int index)
-	set (int index)
-	indexOf()
-	lastIndexOf()
-	subList(int fromIndex, int toIndex)
+
 }
 interface Set #coral
 interface SortedSet
